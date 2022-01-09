@@ -1,0 +1,1 @@
+web: gunicorn Shoematic.wsgi --log-file -
