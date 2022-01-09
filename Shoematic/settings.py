@@ -181,6 +181,7 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
     os.path.join(BASE_DIR, 'frontend/build/static')
 ]
+STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
 
 # MEDIA_ROOT = BASE_DIR / 'static/images'
 MEDIA_ROOT = BASE_DIR / 'static/images'
