@@ -127,3 +127,11 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+
+#Django
+migrations/
+
+#React
+node_modules/
+yarn.lock
