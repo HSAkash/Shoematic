@@ -64,7 +64,7 @@ function LoginScreen({ location, history }) {
                 </Button>
             </Form>
 
-            <Row className='py-3'>
+            <Row className='py-2'>
                 <Col>
                     New Customer? <Link
                         to={redirect ? `/register?redirect=${redirect}` : '/register'}>
@@ -72,7 +72,7 @@ function LoginScreen({ location, history }) {
                         </Link>
                 </Col>
             </Row>
-            <Row className='py-3'>
+            <Row className='py-1'>
                 <Col>
                     Forgot Password? <a href="/reset_password/">Click</a>
                 </Col>
