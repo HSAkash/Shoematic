@@ -129,7 +129,7 @@ dmypy.json
 
 
 #Django
-migrations/
+# migrations/
 
 #React
 node_modules/
