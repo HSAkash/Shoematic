@@ -134,3 +134,4 @@ dmypy.json
 #React
 node_modules/
 yarn.lock
+staticfiles/
