@@ -14,12 +14,13 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include, re_path
+from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from django.views.generic import TemplateView
 from django.contrib.auth import views as auth_views
-from django.views.static import serve
+
+from .views import MediaFilesView
 
 urlpatterns = [
     path('shoematicadmin/', admin.site.urls),
@@ -28,8 +29,7 @@ urlpatterns = [
     path('api/users/', include('base.urls.user_urls')),
     path('api/orders/', include('base.urls.order_urls')),
 
-    re_path(r'^images/(?P<path>.*)$', serve, {'document_root':settings.MEDIA_ROOT}),
-
+    path('images/<str:file>', MediaFilesView, name='media'),
     # password reset
     path('reset_password/',
          auth_views.PasswordResetView.as_view(),         name='reset_password'),
