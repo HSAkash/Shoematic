@@ -14,7 +14,7 @@ const Footer = () => {
                         <br/>
                         <i className="fa fa-envelope"></i> <a className='text-white' href={`mailto:shoematic07@gmail.com`}>shoematic07@gmail.com</a>
                         <br />
-                        <a className='text-white' href="https://www.facebook.com/Shoematic.bd/" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i> facebook.com/shoematic.bd</a>
+                        <a className='text-white' href="https://www.facebook.com/Shoematic.bd/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i> facebook.com/shoematic.bd</a>
                         
 
                     </Col>
