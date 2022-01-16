@@ -183,7 +183,7 @@ STATICFILES_DIRS = [
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 MEDIA_URL = '/images/'
 # MEDIA_ROOT = BASE_DIR / 'static/images'
-MEDIA_ROOT = BASE_DIR / 'static/images'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'images')
 
 
 # Default primary key field type
