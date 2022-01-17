@@ -29,7 +29,7 @@ urlpatterns = [
     path('api/users/', include('base.urls.user_urls')),
     path('api/orders/', include('base.urls.order_urls')),
 
-    path('images/<str:file>', MediaFilesView, name='media'),
+    # path('images/<str:file>', MediaFilesView, name='media'),
     # password reset
     path('reset_password/',
          auth_views.PasswordResetView.as_view(),         name='reset_password'),

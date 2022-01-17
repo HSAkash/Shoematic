@@ -14,6 +14,9 @@ import dj_database_url
 from pathlib import Path
 from datetime import timedelta
 import os
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -28,7 +31,7 @@ SECRET_KEY = 'django-insecure-f*9x2)-36jyu7_p6@fltfoog=pr+-5_yf86=%n#1lohj&m=0*#
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['shoematic.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['shoematic.herokuapp.com', '127.0.0.1','118.179.39.86']
 
 
 # Application definition
@@ -42,6 +45,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'corsheaders',
+    'cloudinary_storage',
+    'cloudinary',
 
     'base.apps.BaseConfig',
 ]
@@ -134,8 +139,8 @@ DATABASES = {
 }
 
 
-db_from_env = dj_database_url.config(conn_max_age=600)
-DATABASES['default'].update(db_from_env)
+# db_from_env = dj_database_url.config(conn_max_age=600)
+# DATABASES['default'].update(db_from_env)
 
 
 # Password validation
@@ -173,6 +178,15 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
+
+# CLOUDINARY_STORAGE = {
+#     'CLOUD_NAME': 'shoematic',
+#     'API_KEY': '413138428795888',
+#     'API_SECRET': 'SPnqxJBN2DjQScrztmTdnb3_4ig',
+# }
+# DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
+
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 MEDIA_URL = '/images/'
@@ -184,6 +198,13 @@ STATICFILES_DIRS = [
 
 # MEDIA_ROOT = BASE_DIR / 'static/images'
 MEDIA_ROOT = BASE_DIR / 'images'
+
+cloudinary.config( 
+    cloud_name = "shoematic", 
+    api_key = "413138428795888", 
+    api_secret = "SPnqxJBN2DjQScrztmTdnb3_4ig",
+    secure = True
+)
 
 
 # Default primary key field type
