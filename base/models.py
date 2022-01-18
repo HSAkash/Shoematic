@@ -4,12 +4,14 @@ from django.core.validators import FileExtensionValidator
 from django.db.models.signals import post_save, pre_save
 from django.dispatch import receiver
 from cloudinary.models import CloudinaryField
+from django.core.validators import FileExtensionValidator
 
 
 class Product(models.Model):
     user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
     name = models.CharField(max_length=200, null=True, blank=True)
-    image = CloudinaryField('image')
+    image = CloudinaryField('image',validators=[
+                              FileExtensionValidator(allowed_extensions=['jpg', 'png', 'jpeg'])])
     brand = models.CharField(max_length=200, null=True, blank=True)
     category = models.CharField(max_length=200, null=True, blank=True)
     description = models.TextField(null=True, blank=True)

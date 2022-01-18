@@ -179,25 +179,20 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
-# CLOUDINARY_STORAGE = {
-#     'CLOUD_NAME': 'shoematic',
-#     'API_KEY': '413138428795888',
-#     'API_SECRET': 'SPnqxJBN2DjQScrztmTdnb3_4ig',
-# }
-# DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
 
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
-MEDIA_URL = '/images/'
+# MEDIA_URL = '/images/'
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
     os.path.join(BASE_DIR, 'frontend/build/static')
 ]
 
-# MEDIA_ROOT = BASE_DIR / 'static/images'
-MEDIA_ROOT = BASE_DIR / 'images'
+
+# MEDIA_ROOT = BASE_DIR / 'images'
 
 cloudinary.config( 
     cloud_name = "shoematic", 
