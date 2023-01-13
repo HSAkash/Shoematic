@@ -196,8 +196,8 @@ STATICFILES_DIRS = [
 
 cloudinary.config( 
     cloud_name = "shoematic", 
-    api_key = "413138428795888", 
-    api_secret = "SPnqxJBN2DjQScrztmTdnb3_4ig",
+    api_key = "", 
+    api_secret = "",
     secure = True
 )
 
@@ -217,4 +217,4 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'shoematic.service@gmail.com'
-EMAIL_HOST_PASSWORD = 'uqsdtwokpfhxgupp'
+EMAIL_HOST_PASSWORD = ''
